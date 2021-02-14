@@ -5,6 +5,8 @@
 local HTTP = game:GetService("HttpService")
 
 local Cords = "latitude,longitude"
+--Ex: local Cords = "38.90772994524026,-77.04134799094689"
+--There must be no spaces in the Cords var
 --
 function GetAndDecode(URL,Cache,Headers)
 	local ServerRes = HTTP:GetAsync(URL,Cache,Headers)
@@ -32,7 +34,7 @@ function SetWeatherData(City,State,Name,Tempature,WindSpeed,WindDirection,Foreca
 	local ForecastDesc_Text = Currently_Text.ForecastDesc
 	
 	LocationTitle_Text.Text = City..","..State..""
-	Tempature_Text.Text = Tempature.."°F"
+	Tempature_Text.Text = Tempature.."Â°F"
 	Currently_Text.Text = Name
 	WindSpeed_Text.Text = "Wind Speed: "..WindSpeed
 	WindDirection_Text.Text = "Wind Direction: "..WindDirection
